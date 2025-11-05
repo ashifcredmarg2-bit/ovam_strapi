@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_publish_date_publish_dates",
+  "info": {
+    "displayName": "Publish_date"
+  },
+  "options": {},
+  "attributes": {
+    "publish_date": {
+      "type": "date"
+    }
+  },
+  "config": {}
+}

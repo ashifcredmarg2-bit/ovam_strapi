@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_aurthors_aurthors",
+  "info": {
+    "displayName": "Aurthors"
+  },
+  "options": {},
+  "attributes": {
+    "Aurthors": {
+      "type": "text",
+      "maxLength": 500
+    }
+  },
+  "config": {}
+}

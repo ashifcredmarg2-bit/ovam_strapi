@@ -4,37 +4,53 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog"
+    "displayName": "Blog"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "heading": {
-      "type": "text"
+    "Heading_main": {
+      "type": "text",
+      "maxLength": 100000,
+      "required": true
     },
-    "subheading": {
-      "type": "text"
-    },
-    "content": {
-      "type": "text"
-    },
-    "cover_Image": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+    "Subheading": {
+      "type": "dynamiczone",
+      "components": [
+        "subheading.subheading"
       ]
     },
-    "Aurthor": {
-      "type": "text"
+    "Content": {
+      "type": "dynamiczone",
+      "components": [
+        "content.content"
+       ]
+    },
+    "CoverImages": {
+      "type": "dynamiczone",
+      "components": [
+        "coverimages.cover-images"
+      ]
+    },
+    "Authors": {
+      "type": "dynamiczone",
+      "components": [
+        "aurthors.aurthors"
+      ]
     },
     "publish_date": {
-      "type": "date"
+      "type": "dynamiczone",
+      "components": [
+        "publish-date.publish-date"
+      ]
+    },
+    "Blogimages": {
+      "type": "dynamiczone",
+      "components": [
+        "blogimages.blog-images"
+      ]
     }
   }
 }

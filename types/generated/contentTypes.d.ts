@@ -492,7 +492,7 @@ export interface ApiAnnouncementAnnouncement
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
-    displayName: 'blog';
+    displayName: 'Blog';
     pluralName: 'blogs';
     singularName: 'blog';
   };
@@ -500,22 +500,24 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Aurthor: Schema.Attribute.Text;
-    content: Schema.Attribute.Text;
-    cover_Image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    Authors: Schema.Attribute.DynamicZone<['aurthors.aurthors']>;
+    Blogimages: Schema.Attribute.DynamicZone<['blogimages.blog-images']>;
+    Content: Schema.Attribute.DynamicZone<['content.content']>;
+    CoverImages: Schema.Attribute.DynamicZone<['coverimages.cover-images']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heading: Schema.Attribute.Text;
+    Heading_main: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100000;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
-    publish_date: Schema.Attribute.Date;
+    publish_date: Schema.Attribute.DynamicZone<['publish-date.publish-date']>;
     publishedAt: Schema.Attribute.DateTime;
-    subheading: Schema.Attribute.Text;
+    Subheading: Schema.Attribute.DynamicZone<['subheading.subheading']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
