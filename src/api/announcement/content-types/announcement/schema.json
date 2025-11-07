@@ -37,14 +37,6 @@
           "localized": true
         }
       }
-    },
-    "vk": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
     }
   }
 }
